@@ -1,0 +1,46 @@
+name: Bug Report
+description: Report a problem with the SpectralBands app.
+title: "[BUG] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting a bug! Please fill out the details below.
+  - type: input
+    id: version
+    attributes:
+      label: SpectralBands Version
+      description: What version of the app are you running? (e.g., 1.0)
+    validations:
+      required: true
+  - type: dropdown
+    id: ios_version
+    attributes:
+      label: iOS Version
+      options:
+        - iOS 17
+        - iOS 18
+        - Older (Please specify)
+    validations:
+      required: true
+  - type: input
+    id: hardware
+    attributes:
+      label: SDR Hardware / Server
+      description: What hardware or server are you connecting to? (e.g., RTL-SDR v4 via rtl_tcp, Public WebSDR)
+  - type: textarea
+    id: description
+    attributes:
+      label: Problem Description
+      placeholder: What happened? What did you expect to happen?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      placeholder: |
+        1. Open the app...
+        2. Configure the server...
+        3. Press connect...

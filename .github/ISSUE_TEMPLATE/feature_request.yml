@@ -1,0 +1,19 @@
+name: Feature Request
+description: Propose a new feature for the SpectralBands app.
+title: "[FEATURE] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Feature Description
+      placeholder: What would you like the app to do?
+    validations:
+      required: true
+  - type: textarea
+    id: use_case
+    attributes:
+      label: Use Case / Why?
+      placeholder: How would this feature help you as an SDR user?
+    validations:
+      required: true
