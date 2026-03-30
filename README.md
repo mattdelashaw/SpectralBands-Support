@@ -17,8 +17,28 @@ We use GitHub Issues to track bugs and plan new features. Before opening a new i
 
 [**Open an Issue**](https://github.com/mattdelashaw/SpectralBands-Support/issues/new/choose)
 
-## 📖 FAQ & Documentation
-*Documentation on setting up rtl_tcp and connecting to WebSDR servers will be added here soon.*
+## 📖 Server Setup & Configuration
+
+SpectralBands supports two primary protocols for connecting to SDR hardware over the network.
+
+### 1. WebSDR (Recommended)
+Our high-performance WebSocket protocol. It abstracts hardware control and provides pre-decimated audio, making it more bandwidth-efficient and secure for public access.
+
+- **Port:** Default 8080 (TCP).
+- **Setup:** Use a compatible WebSDR server (like `rtlsdr-next`).
+- **Command example:** `./websdr --port 8080`
+
+### 2. rtl_tcp
+The industry-standard protocol for raw IQ streaming. Note that this protocol provides direct hardware access and is best suited for local networks.
+
+- **Port:** Default 1234 (TCP).
+- **Setup:** Install `rtl-sdr` tools.
+- **Command example:** `rtl_tcp -a 0.0.0.0 -p 1234`
+
+## 🛠 Troubleshooting
+- **Connection Refused:** Ensure your server is running and your router/firewall is allowing traffic on the specified port.
+- **Laggy Waterfall:** Ensure you have a stable network connection. For `rtl_tcp`, a 5GHz Wi-Fi or wired connection is recommended due to high IQ data rates.
+- **No Audio:** Ensure your iOS device is not on "Silent" mode and the in-app Audio icon is toggled to ON.
 
 ## ⚖️ License
 Content in this repository (documentation, issue templates, and assets) is licensed under the [MIT License](LICENSE). 
