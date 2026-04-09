@@ -40,9 +40,10 @@ SpectralBands supports two primary protocols for connecting to SDR hardware over
 ### 1. WebSDR (Recommended)
 Our high-performance WebSocket protocol. It abstracts hardware control and provides pre-decimated audio, making it more bandwidth-efficient and secure for public access.
 
+- **Server Software:** [**rtlsdr-next**](https://github.com/mattdelashaw/rtlsdr-next) (Open Source)
 - **Port:** Default 8080 (TCP).
-- **Setup:** Use a compatible WebSDR server (like `rtlsdr-next`).
-- **Command example:** `./websdr --port 8080`
+- **Setup:** Follow the official [setup guide](https://github.com/mattdelashaw/rtlsdr-next#setup) for Linux or macOS.
+- **Command example:** `rtlsdr-next --port 8080 --websdr` (or similar)
 
 ### 2. rtl_tcp
 The industry-standard protocol for raw IQ streaming. Note that this protocol provides direct hardware access and is best suited for local networks.
